@@ -1000,6 +1000,28 @@ phones = [{"brand":"Samsung","model":"Samsung A777","date":2008},
 {"brand":"Motorola","model":"Motorola Moto G9 (India)","date":2020}]
 
 # code yozing
+percent = 100/len(phones)
+brand_names = []
+dates = []
+
+for i in range(len(phones)):
+    brand_names.append(phones[i]["brand"])
+    dates.append(phones[i]["date"])
+
+unique_dates = set(dates)
+unique_brand_names = set(brand_names)
+
+print("Hisobot:\n- Brandlar:")
+for brand in unique_brand_names:
+    count = brand_names.count(brand)
+    print(f"\t- {brand} telefonlar: {count} ta {count * percent:.1f}%i")
+
+print("\n- Yillar (2000-2025):")
+for date in unique_dates:
+    if date >= 2000:
+        count = dates.count(date)
+        print(f"\t- {date} yilda: {count} ta {count * percent:.1f}%i")
+
 # natija quyidagicha chiqsin
 """
 Hisobot:
